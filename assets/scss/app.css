@@ -41,4 +41,36 @@ nav ul li {
     display: flex;
     flex-direction: row;
   }
+}
+
+#buttons button.primary {
+  color: white;
+  background-color: red;
+}
+#buttons button.primary:hover {
+  color: black;
+  background-color: pink;
+}
+
+nav ul li {
+  font-size: 0.9em;
+}
+nav ul li:nth-of-type(2) {
+  color: azure;
+}
+
+p.main-text {
+  font-size: 1.2em;
+  font-weight: bold;
+  font-family: "Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande", "Lucida Sans", Arial, sans-serif;
+}
+
+h1 {
+  margin-left: 35px;
+  margin-right: 35px;
+  color: rgb(30, 30, 200);
+}
+
+aside {
+  padding: 3em;
 }/*# sourceMappingURL=app.css.map */

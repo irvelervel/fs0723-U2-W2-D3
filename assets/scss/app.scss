@@ -47,6 +47,7 @@ ul {
 // _____________
 
 // 2) SELETTORI NIDIFICATI (ANNIDATI)
+
 nav {
   display: block;
   background-color: pink;
@@ -71,3 +72,102 @@ nav {
     }
   }
 }
+
+// 3) LAVORARE MEGLIO CON LE PSEUDOCLASSI
+
+// #buttons button.primary {
+//   color: white;
+//   background-color: red;
+// }
+
+// #buttons button.primary:hover {
+//   color: black;
+//   background-color: pink;
+// }
+
+#buttons {
+  button.primary {
+    color: white;
+    background-color: red;
+    &:hover {
+      color: black;
+      background-color: pink;
+    }
+  }
+}
+
+// nav ul li {
+//   font-size: 0.9em;
+// }
+
+// nav ul li:nth-of-type(2) {
+//   color: azure;
+// }
+
+nav {
+  ul {
+    li {
+      // come scrivere nav ul li {}
+      font-size: 0.9em;
+      &:nth-of-type(2) {
+        color: azure;
+      }
+    }
+  }
+}
+
+// possiamo immaginare il "&" come un "this"
+
+// 4) UTILIZZARE UN PREFISSO COMUNE PER PROPRIETÀ SIMILI
+// p.main-text {
+//   font-size: 1.2em;
+//   font-weight: bold;
+//   font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande',
+//     'Lucida Sans', Arial, sans-serif;
+// }
+
+p.main-text {
+  font: {
+    size: 1.2em;
+    weight: bold;
+    family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande',
+      'Lucida Sans', Arial, sans-serif;
+  }
+}
+
+// 5) VARIABILI
+// le variabili in SASS servono per memorizzare dei valori.
+// i valori che salviamo potranno venire utilizzati nelle regole di stile che scriviamo successivamente
+// concettualmente, in SASS, le variabili sono più simili a delle costanti (raramente le ri-assegneremo)
+
+// cosa possiamo salvare in una variabile SASS?
+// - valori numerici (1, 50, 10px, 2.5em, 2rem, etc.)
+// - stringhe ('hello', "ciao")
+// - colori (red, blue, azure, #ffcc00, rgb(0, 255, 0), rgba(0, 255, 0, 0.5)
+// - booleani (true, false)
+// - null
+// - valori combinati per le cosiddette proprietà CSS "shortcut" (1px solid black, 5px 10px 8px 10px)
+// - liste di valori (10px, 16px, 24px) -> un po' come un array in JS
+// - mappe di coppie chiave/valore -> un po' come gli oggetti in JS
+
+// es. di dichiarazione variabile
+$main-margin: 35px;
+$primary-color: rgb(30, 30, 200);
+// nomenclatura kebab-case :)
+$main-padding: 2em;
+
+h1 {
+  margin-left: $main-margin; // 35px
+  margin-right: $main-margin; // 35px
+  color: $primary-color; // rgb(30, 30, 200);
+}
+
+// SASS sa utilizzare anche gli operatori matematici, logici e di comparazione
+// + - / *
+// ==, !=, <, > <=, >=
+
+aside {
+  padding: $main-padding + 1em; // 2em + 1em = 3em
+}
+
+// 5) MIXINS
