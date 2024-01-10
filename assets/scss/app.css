@@ -73,4 +73,34 @@ h1 {
 
 aside {
   padding: 3em;
+}
+
+button.spotify {
+  color: lightgreen;
+  background-color: black;
+  padding: 2em;
+  border-radius: 50px;
+}
+button.spotify:nth-of-type(1) {
+  padding: 3em;
+}
+
+.container > article {
+  margin-top: 10px;
+  border: 2px solid black;
+  background-color: lightblue;
+}
+
+.container > aside {
+  margin-top: 10px;
+  border: 2px solid black;
+  background-color: red;
+}
+
+.elemento1 {
+  font-size: 24px;
+}
+
+.elemento2 {
+  font-weight: 700;
 }/*# sourceMappingURL=app.css.map */

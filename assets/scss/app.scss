@@ -171,3 +171,57 @@ aside {
 }
 
 // 5) MIXINS
+// un MIXIN è un blocco di regole CSS, richiamabile con una singola direttiva
+
+@mixin buttonStyles {
+  color: lightgreen;
+  background-color: black;
+  padding: $main-padding;
+  border: {
+    radius: 50px;
+  }
+}
+
+button.spotify {
+  @include buttonStyles; // portiamo dentro questo selettore CSS tutte le regole di buttonStyles
+  &:nth-of-type(1) {
+    padding: $main-padding + 1em;
+  }
+}
+
+// un mixin può essere "immaginato" come una "funzione" in SCSS...
+// ...e come le funzioni in JS è possibile personalizzarli tramite parametri!
+
+@mixin customStyle($myBackgroundColor: red) {
+  margin-top: 10px;
+  border: 2px solid black;
+  background-color: $myBackgroundColor;
+}
+
+.container > article {
+  // gli article dentro le classi container
+  @include customStyle(lightblue);
+}
+
+.container > aside {
+  @include customStyle(
+
+  ); // $myBackgroundColor prende il colore di default indicato, quindi red
+}
+
+// 6) INTERPOLAZIONE nelle stringhe
+@mixin fontInterpolation($property, $value) {
+  // questo mixin applicherà delle regole su una proprietà DINAMICA relativa alla famiglia delle proprietà font
+  // dovrei mettere "font" e poi aggiungerci il valore di $property, per ottenere tipo font-size, font-weight
+  font-#{$property}: $value;
+}
+
+// dicitura #{$nome-parametro}
+
+.elemento1 {
+  @include fontInterpolation('size', 24px);
+}
+
+.elemento2 {
+  @include fontInterpolation('weight', 700);
+}
