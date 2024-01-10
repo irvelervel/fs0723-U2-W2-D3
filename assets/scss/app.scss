@@ -1,0 +1,73 @@
+// Le pagine web moderne altamente elaborate soffrono principalmente di 3 problemi legati agli stili:
+// 1) stili mal organizzati
+// 2) stili poco mantenibili
+// 3) stili spesso duplicati
+
+// Non sarebbe bello scrivere i file di stile in un modo più intelligente? In modo da organizzare meglio i file,
+// trovare più facilmente i punti da correggere ed evitare le duplicazioni? SASS (Syntactically Awesome Style Sheets)
+// propone una soluzione, mettendo a disposizione una sintassi PIÙ POTENTE per la stesura dei fogli di stile.
+// È una sintassi 100% retrocompatibile con CSS, e verrà automaticamente compilata in un file CSS risultante (l'unico
+// formato leggibile dai browser) grazie all'estensione di VSCode chiamata "Live SASS Compiler".
+
+// Abbiamo ora a disposizione una sintassi ben più potente del normale CSS! Vediamone pian piano le caratteristiche:
+
+// 1) si può scrivere del normalissimo CSS
+main {
+  font-size: 1.1em;
+}
+
+p {
+  color: white;
+  background-color: green;
+}
+
+ul {
+  padding: 0;
+  list-style-type: none;
+}
+
+// _____________
+
+// nav {
+//   display: block;
+// }
+
+// nav ul {
+//   display: flex;
+//   flex-direction: column;
+// }
+
+// @media screen and (min-width: 576px) {
+//   nav ul {
+//     display: flex;
+//     flex-direction: row;
+//   }
+// }
+
+// _____________
+
+// 2) SELETTORI NIDIFICATI (ANNIDATI)
+nav {
+  display: block;
+  background-color: pink;
+  ul {
+    display: flex;
+    flex-direction: column;
+    li {
+      margin-left: 0;
+      margin-right: 0;
+      @media screen and (min-width: 576px) {
+        margin-left: 0.5em;
+        margin-right: 0.5em;
+      }
+      @media screen and (min-width: 768px) {
+        margin-left: 1em;
+        margin-right: 1em;
+      }
+    }
+    @media screen and (min-width: 576px) {
+      display: flex;
+      flex-direction: row;
+    }
+  }
+}
