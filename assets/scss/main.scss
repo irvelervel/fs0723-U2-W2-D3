@@ -1,0 +1,11 @@
+// i partials vengono IMPORTATI in unico file scss (SENZA l'underscore nel nome)
+
+// NB: i percorsi degli imports NON hanno l'underscore nel nome
+@import 'partials/colors';
+@import 'partials/variables';
+@import 'partials/articles';
+@import 'partials/footer';
+@import 'partials/navbar';
+
+// qui dentro NON CI ANDREBBE NESSUNA REGOLA CSS/SCSS "sciolta"...
+// ...questo è solo un file di IMPORT (un imbuto!)

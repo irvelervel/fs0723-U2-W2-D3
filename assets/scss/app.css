@@ -103,4 +103,51 @@ button.spotify:nth-of-type(1) {
 
 .elemento2 {
   font-weight: 700;
+}
+
+.text-10px {
+  color: black;
+  font-size: 10px;
+}
+
+.text-16px {
+  color: black;
+  font-size: 16px;
+}
+
+.text-24px {
+  color: black;
+  font-size: 24px;
+}
+
+.text-xs {
+  font-size: 8px;
+}
+
+.text-sm {
+  font-size: 12px;
+}
+
+.text-md {
+  font-size: 16px;
+}
+
+.text-lg {
+  font-size: 20px;
+}
+
+.text-xl {
+  font-size: 24px;
+}
+
+.text-xxl {
+  font-size: 28px;
+}
+
+.custom-margin {
+  margin: 0px;
+}
+
+.custom-padding {
+  padding: 10px;
 }/*# sourceMappingURL=app.css.map */

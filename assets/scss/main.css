@@ -1,0 +1,13 @@
+article p {
+  font-size: 1.1em;
+  color: rgb(200, 50, 10);
+}
+
+footer {
+  display: flex;
+  justify-content: center;
+}
+
+nav {
+  display: block;
+}/*# sourceMappingURL=main.css.map */

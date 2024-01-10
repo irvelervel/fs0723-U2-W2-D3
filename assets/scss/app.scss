@@ -225,3 +225,72 @@ button.spotify {
 .elemento2 {
   @include fontInterpolation('weight', 700);
 }
+
+// 7) CICLI
+// è possibile in SASS utilizzare dei cicli per "automatizzare" la generazione di STILI e di CLASSI
+$my-sizes: 10px, 16px, 24px; // come un array :)
+
+// creiamo un ciclo! in SASS si utilizza la direttiva @each
+@each $single-size in $my-sizes {
+  // questo è un ciclo che scorre individualmente gli elementi di my-sizes, uno alla volta
+  // $single-size vale 10px al primo ciclo, 16px al secondo e 24px al terzo
+  // GENERIAMO ORA DELLE CLASSI CSS
+  .text-#{$single-size} {
+    color: black;
+    font-size: $single-size;
+  }
+}
+
+// dichiaro una mappa, ovvero una serie di coppie chiave/valore (un po' come un oggetto in JS!)
+$sizes-map: (
+  xs: 8px,
+  sm: 12px,
+  md: 16px,
+  lg: 20px,
+  xl: 24px,
+  xxl: 28px,
+);
+
+@each $breakpoint, $value in $sizes-map {
+  .text-#{$breakpoint} {
+    font-size: $value;
+  }
+}
+
+// 8) IF/ELSE
+// in SASS è possibile utilizzare delle direttive condizionali al fine di generare classi con differente contenuto
+// è possibile impostare delle condizioni relativamente all'esistenza di una variabile, ad una comparazione, etc.
+
+$my-value: blue;
+
+@mixin generate-margin {
+  .custom-margin {
+    @if $my-value == red {
+      margin: 10px;
+    } @else {
+      margin: 0px;
+    }
+  }
+}
+
+@include generate-margin;
+
+@mixin generate-padding($value) {
+  .custom-padding {
+    @if $value >= 16 {
+      padding: #{$value}px;
+    } @else {
+      padding: 10px;
+    }
+  }
+}
+
+@include generate-padding(0);
+// @include generate-padding(30); // genero una classe diversa
+
+// 9) PARTIALS
+// SASS ci permette di lavorare su singoli, piccoli files che volendo possono occuparsi di specifiche
+// porzione di stile
+// questo rende il lavoro più MODULARE, e MOLTO MANTENIBILE
+
+// passiamo a main.scss
